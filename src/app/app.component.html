@@ -1,26 +1,25 @@
-<div class="header">
-  <div class="logo">
-    <img src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1646339469/angular_wzrs5o.png">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isLoggedIn()">
+  <a class="navbar-brand" href="#">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Menu 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-primary btn-lg" href="#" role="button" (click)="logout()" *ngIf="isLoggedIn()">Sign Out</a>
+      </li>
+    </ul>
   </div>
+</nav>
+<p class="lead">
+  <a class="btn btn-primary btn-lg" href="#" role="button" (click)="login()" *ngIf="!isLoggedIn()">Sign In</a>
+</p>
+<div *ngIf="isLoggedIn()"><a routerLink="admin-page">Admin Page</a>
+  <app-admin-page></app-admin-page>
 </div>
-<div class="resource-list">
-  <h2>
-      Here are some resources to help you on your Angular + Netlify journey:
-  </h2>
-  <ul>
-    <li>
-      <a href="https://github.com/netlify-templates/angular-quickstart">The Angular Quickstart repo</a>
-    </li>
-    <li>
-      <a href="https://www.netlify.com/tags/angular/">Netlify Blog: Angular posts</a>
-    <li>
-      <a href="https://docs.netlify.com/">Netlify Docs</a>
-    </li>
-    <li>
-      <a href="https://angular.io/">Angular Docs</a>
-    </li>
-  </ul>
-</div>
-<footer class="footer">
-  Made with <a href="https://netlify.com"><img src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1646714899/netliheart_ezlkim.svg" alt="Netlify Logo" /></a> for you!
-</footer>
+<h1>{{message}}</h1>
+<router-outlet></router-outlet>
