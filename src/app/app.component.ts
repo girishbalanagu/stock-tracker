@@ -13,8 +13,11 @@ export class AppComponent implements OnInit {
 
   title = 'My Microsoft Login- Example';
   message: string | undefined;
+  currentUser: any;
+  users: any[];
 
   constructor(private authService: MsalService, private helloService: HelloService) {
+    this.users = [];
 
   }
   ngOnInit(): void {
@@ -24,12 +27,15 @@ export class AppComponent implements OnInit {
       }
     })
     this.getHello();
+    // this.getUsers();
   }
 
   isLoggedIn(): boolean {
-    const user = "girishbalanagu@outlook.com"
-    // return this.authService.instance.getActiveAccount() != null
-    return this.authService.instance.getActiveAccount()?.username == user;
+    // const user = "girishbalanagu@outlook.com"
+    // return this.authService.instance.getActiveAccount() != null;
+    const user = this.users.find(user => user.email === this.authService.instance.getActiveAccount()?.username)
+    this.currentUser = user;
+    return user ? true : false;
   }
 
   login() {
@@ -48,6 +54,12 @@ export class AppComponent implements OnInit {
   getHello() {
     this.helloService.getHello().subscribe((res) => {
       this.message = res.message;
+    })
+  }
+
+  getUsers() {
+    this.helloService.getUsers().subscribe((users) => {
+      this.users = users;
     })
   }
 }

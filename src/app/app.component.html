@@ -18,8 +18,9 @@
 <p class="lead">
   <a class="btn btn-primary btn-lg" href="#" role="button" (click)="login()" *ngIf="!isLoggedIn()">Sign In</a>
 </p>
-<div *ngIf="isLoggedIn()"><a routerLink="admin-page">Admin Page</a>
-  <app-admin-page></app-admin-page>
-</div>
+
 <h1>{{message}}</h1>
+<h1>{{currentUser?.role}}</h1>
 <router-outlet></router-outlet>
+
+
