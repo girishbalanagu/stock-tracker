@@ -3,6 +3,8 @@ import { AuthenticationResult } from '@azure/msal-browser';
 import { MsalService } from '@azure/msal-angular';
 import { Component, OnInit } from '@angular/core';
 import { HelloService } from './services/hello.service';
+import { Title } from '@angular/platform-browser';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -10,24 +12,28 @@ import { HelloService } from './services/hello.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  title = 'My Microsoft Login- Example';
+  title = 'Stock Tracter Application';
   message: string | undefined;
   currentUser: any;
   users: any[];
 
-  constructor(private authService: MsalService, private helloService: HelloService) {
+  constructor(
+    private authService: MsalService,
+    private helloService: HelloService,
+    private usersService: UsersService,
+    private titleService: Title) {
     this.users = [];
 
   }
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
     this.authService.instance.handleRedirectPromise().then(res => {
       if (res != null && res.account != null) {
         this.authService.instance.setActiveAccount(res.account)
       }
     })
     this.getHello();
-    // this.getUsers();
+    this.getUsers();
   }
 
   isLoggedIn(): boolean {
@@ -58,7 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   getUsers() {
-    this.helloService.getUsers().subscribe((users) => {
+    this.usersService.getUsers().subscribe((users) => {
       this.users = users;
     })
   }
