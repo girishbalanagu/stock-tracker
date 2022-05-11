@@ -13,8 +13,8 @@ import { AnalystService } from './services/analyst.service';
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      //clientId: 'a9bf3b96-929a-4059-9b0b-71c2f60f0466',
-      clientId: '871433f3-956b-4623-a835-c7389982905d',
+      //clientId: '871433f3-956b-4623-a835-c7389982905d',
+      clientId: 'cecbcd27-f47e-46fc-8518-2ef4a293de27',
       redirectUri: 'https://earnest-gnome-231e1a.netlify.app/'
     }
   });
