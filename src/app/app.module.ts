@@ -15,7 +15,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     auth: {
       //clientId: 'a9bf3b96-929a-4059-9b0b-71c2f60f0466',
       clientId: '871433f3-956b-4623-a835-c7389982905d',
-      redirectUri: 'http://localhost:8888/'
+      redirectUri: 'https://earnest-gnome-231e1a.netlify.app/'
     }
   });
 }
