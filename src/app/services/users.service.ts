@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//@ts-ignore
 import { Observable } from 'rxjs';
 
 @Injectable({

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { HelloService } from './services/hello.service';
 import { Title } from '@angular/platform-browser';
 import { UsersService } from './services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,13 @@ import { UsersService } from './services/users.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Stock Tracter Application';
+  title = 'Stock Tracker Application';
   message: string | undefined;
   currentUser: any;
   users: any[];
 
   constructor(
+    private router:Router,
     private authService: MsalService,
     private helloService: HelloService,
     private usersService: UsersService,
@@ -50,11 +52,16 @@ export class AppComponent implements OnInit {
     this.authService.loginPopup()
       .subscribe((response: AuthenticationResult) => {
         this.authService.instance.setActiveAccount(response.account);
+        this.isLoggedIn();
+        this.currentUser.role == 'admin'?this.router.navigate(['/admin']) : this.router.navigate(['/analyst']);
+        
       });
+      
   }
 
   logout() {
     this.authService.logout()
+    this.router.navigate(['/'])
   }
 
   getHello() {

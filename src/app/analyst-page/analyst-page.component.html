@@ -1,1 +1,9 @@
-<h1>Public</h1>
+<h1>Your Configured Stock(s): <strong>TESLA</strong></h1>
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="customers"
+  keyExpr="exchange"
+  [columns]="['shortname', 'quoteType', 'symbol', 'score', 'exchDisp']"
+  [showBorders]="true"
+>
+</dx-data-grid>

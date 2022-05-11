@@ -1,6 +1,7 @@
 import { MsalService } from '@azure/msal-angular';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+// @ts-ignore
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +21,7 @@ export class MicrosoftLoginGuard implements CanActivate {
       console.log('not logged in!')
       return false;
     }
+    console.log('logged in!')
 
     return true;
   }

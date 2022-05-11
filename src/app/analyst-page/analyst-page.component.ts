@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DxDataGridModule } from 'devextreme-angular';
+import { Customer, AnalystService } from '../services/analyst.service';
 
 @Component({
   selector: 'app-analyst-page',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalystPageComponent implements OnInit {
 
-  constructor() { }
+  customers: Customer[];
+
+  constructor(service: AnalystService) {
+    this.customers = service.getCustomers();
+  }
 
   ngOnInit(): void {
   }

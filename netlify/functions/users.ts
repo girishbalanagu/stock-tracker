@@ -32,11 +32,12 @@ const handler: Handler = async (event, context) => {
         body: JSON.stringify(
             [
                 {
-                    email: "girishbalanagu@outlook.com",
+                    email: "ananthakrishnancse@gmail.com",
                     role: "admin"
                 },
+  
                 {
-                    email: "girishbalanagu1@outlook.com",
+                    email: "ananthakrishnanm@live.com",
                     role: "analyst"
                 }
             ]

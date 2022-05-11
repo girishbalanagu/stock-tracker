@@ -4,11 +4,12 @@ import { AnalystPageComponent } from './analyst-page/analyst-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: LoginPageComponent},
   {path: 'admin', component: AdminPageComponent, canActivate: [MicrosoftLoginGuard]},
-  {path: 'analyst', component: AnalystPageComponent, canActivate: [MicrosoftLoginGuard]}
+  {path: 'analyst', component: AnalystPageComponent}
 ];
 // {path: '**', component: AnalystPageComponent}];
 
