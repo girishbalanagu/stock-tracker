@@ -92,7 +92,92 @@ const customers: Customer[] = [
       "sector": "Consumer Cyclical",
       "industry": "Auto Manufacturers",
       "isYahooFinance": true
-  }
+  },
+  {
+    "exchange": "NMS",
+    "shortname": "Microsoft Corporation",
+    "quoteType": "EQUITY",
+    "symbol": "MSFT",
+    "index": "quotes",
+    "score": 403788.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "NASDAQ",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "dispSecIndFlag": true,
+    "isYahooFinance": true
+},
+{
+    "exchange": "MEX",
+    "shortname": "MICROSOFT CORP",
+    "quoteType": "EQUITY",
+    "symbol": "MSFT.MX",
+    "index": "quotes",
+    "score": 20320.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "Mexico",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "isYahooFinance": true
+},
+{
+    "exchange": "GER",
+    "shortname": "MICROSOFT CORP",
+    "quoteType": "EQUITY",
+    "symbol": "MSF.DE",
+    "index": "quotes",
+    "score": 20216.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "XETRA",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "isYahooFinance": true
+},
+{
+    "exchange": "FRA",
+    "shortname": "MICROSOFT CORP",
+    "quoteType": "EQUITY",
+    "symbol": "MSF.F",
+    "index": "quotes",
+    "score": 20051.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "Frankfurt",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "isYahooFinance": true
+},
+{
+    "exchange": "BUE",
+    "shortname": "MICROSOFT CORP",
+    "quoteType": "EQUITY",
+    "symbol": "MSFT.BA",
+    "index": "quotes",
+    "score": 20025.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "Buenos Aires",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "isYahooFinance": true
+},
+{
+    "exchange": "SAO",
+    "shortname": "MICROSOFT   DRN",
+    "quoteType": "EQUITY",
+    "symbol": "MSFT34.SA",
+    "index": "quotes",
+    "score": 20018.0,
+    "typeDisp": "Equity",
+    "longname": "Microsoft Corporation",
+    "exchDisp": "São Paulo",
+    "sector": "Technology",
+    "industry": "Software—Infrastructure",
+    "isYahooFinance": true
+}
 ];
 
 @Injectable()

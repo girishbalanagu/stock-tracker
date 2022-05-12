@@ -1,4 +1,4 @@
-<h1>Your Configured Stock(s): <strong>TESLA</strong></h1>
+<h1>Your Configured Stock(s): <strong>TESLA, MSFT</strong></h1>
 <dx-data-grid
   id="gridContainer"
   [dataSource]="customers"
@@ -6,4 +6,13 @@
   [columns]="['shortname', 'quoteType', 'symbol', 'score', 'exchDisp']"
   [showBorders]="true"
 >
+<dxo-filter-row
+[visible]="true"
+></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+<dxo-search-panel
+[visible]="true"
+[width]="240"
+placeholder="Search..."
+></dxo-search-panel>
 </dx-data-grid>
