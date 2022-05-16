@@ -8,7 +8,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
-  {path: 'admin', component: AdminPageComponent, canActivate: [MicrosoftLoginGuard]},
+  {path: 'admin', component: AdminPageComponent},
   {path: 'analyst', component: AnalystPageComponent}
 ];
 // {path: '**', component: AnalystPageComponent}];
