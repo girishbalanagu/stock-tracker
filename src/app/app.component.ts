@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
         this.authService.instance.setActiveAccount(res.account)
       }
     })
-    this.getHello();
     this.getUsers();
   }
 
@@ -63,13 +62,7 @@ export class AppComponent implements OnInit {
     this.authService.logout()
     this.router.navigate(['/'])
   }
-
-  getHello() {
-    this.helloService.getHello().subscribe((res) => {
-      this.message = res.message;
-    })
-  }
-
+  
   getUsers() {
     this.usersService.getUsers().subscribe((users) => {
       this.users = users;

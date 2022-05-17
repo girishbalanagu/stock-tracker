@@ -3,7 +3,8 @@ import { DxDataGridModule } from 'devextreme-angular';
 import { Workbook } from 'exceljs';
 import { saveAs } from 'file-saver';
 import { exportDataGrid } from 'devextreme/excel_exporter';
-import { Customer, AnalystService } from '../services/analyst.service';
+import { Customer, AnalystService} from '../services/analyst.service';
+import { StockinfoService } from '../services/stockinfo.service';
 
 @Component({
   selector: 'app-analyst-page',
@@ -12,13 +13,14 @@ import { Customer, AnalystService } from '../services/analyst.service';
 })
 export class AnalystPageComponent implements OnInit {
 
-  customers: Customer[];
+  customers:any;
 
-  constructor(service: AnalystService) {
-    this.customers = service.getCustomers();
+  constructor(service: AnalystService, private stockinfo: StockinfoService) {
+    
   }
 
   ngOnInit(): void {
+    this.stockinfo.getStockinfo().subscribe((x : any) => { console.log('subs'+x);this.customers = x});
   }
   onExporting(e: { component: any; cancel: boolean; }) {
     const workbook = new Workbook();
