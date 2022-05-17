@@ -20,7 +20,7 @@ export class AnalystPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stockinfo.getStockinfo().subscribe((x : any) => { console.log('subs'+x);this.customers = x});
+    this.stockinfo.getStockinfo().subscribe((x : any) => { console.log('subs'+JSON.stringify(x[0].data.quotes));this.customers = x[0].data.quotes});
   }
   onExporting(e: { component: any; cancel: boolean; }) {
     const workbook = new Workbook();

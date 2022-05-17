@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
 
-
-
-
-
-
 export class Customer {
   exchange!: string;
   shortname!: string;
