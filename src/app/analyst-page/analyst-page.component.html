@@ -5,6 +5,7 @@
   keyExpr="exchange"
   [columns]="['shortname', 'quoteType', 'symbol', 'score', 'exchDisp']"
   [showBorders]="true"
+  (onExporting)="onExporting($event)"
 >
 <dxo-filter-row
 [visible]="true"
@@ -15,4 +16,5 @@
 [width]="240"
 placeholder="Search..."
 ></dxo-search-panel>
+<dxo-export [enabled]="true"></dxo-export>
 </dx-data-grid>
