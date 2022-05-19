@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnalystPageComponent } from './analyst-page/analyst-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { DxDataGridModule } from 'devextreme-angular';
+import { AnalystService } from './services/analyst.service';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      // clientId: 'a9bf3b96-929a-4059-9b0b-71c2f60f0466',
-      clientId: '871433f3-956b-4623-a835-c7389982905d',
-      redirectUri: 'http://localhost:8888'
+      //clientId: '871433f3-956b-4623-a835-c7389982905d',
+      clientId: 'cecbcd27-f47e-46fc-8518-2ef4a293de27',
+      redirectUri: 'https://earnest-gnome-231e1a.netlify.app/'
     }
   });
 }
@@ -28,14 +30,16 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     BrowserModule,
     AppRoutingModule,
     MsalModule,
-    HttpClientModule
+    HttpClientModule,
+    DxDataGridModule
   ],
   providers: [
     {
       provide: MSAL_INSTANCE,
       useFactory: MSALInstanceFactory
     },
-    MsalService
+    MsalService,
+    AnalystService
   ],
   bootstrap: [AppComponent]
 })
